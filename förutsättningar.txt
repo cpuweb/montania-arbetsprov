@@ -1,0 +1,29 @@
+Tack för ditt intresse att bli en del av Montanias utvecklingsgäng!
+Vi har tagit del av din ansökan och som nästa steg vill vi gärna se exempel på hur du kodar. Det gör vi genom en enkel programmeringsuppgift som är relevant för arbetsuppgifter som webbutvecklare på Montania. Är du intresserad av att göra uppgiften skickar du koden eller helst en githublänk till oss när du är klar med den.
+Om vi kallar dig till intervju för få att veta mer om dig och berätta om oss får du även möjlighet att presentera din lösning och berätta om hur du har löst uppgiften. Prata kod är kul!
+
+
+Arbetsprov
+
+Vi är intresserade av att se dina förmågor när det gäller:
+- Strukturering av kod för logik och presentation
+- Problemlösning
+- Algoritmtänk
+
+Uppgift
+Hämta data från API https://dev14.ageraehandel.se/sv/api/product
+Presentera följande information på en webbsida:
+- Antal artiklar
+- Högsta och lägsta pris på artiklarna
+- Artikellista i bokstavsordning som visar benämning, pris inkl moms (pris i api-svaret är exkl moms) och om artikel finns i lager
+- uppdelad med delrubriker efter kategorier (artikelkategorier_id)
+
+
+Uppgiften ska lösas med PHP, gärna genom att använda Symfony men det är inget krav. Meningen är inte att du ska gräva ner dig i det tekniska utan det viktiga är att visa hur du löser uppgiften.
+https://symfony.com/
+
+Bonusuppgifter (frivilliga men gör gärna dessa om du vill visa mer av vad du behärskar):
+- Gör så att lösningen kan köras i CLI som alternativ till web.
+- Lös även uppgiften helt med javascript istället för PHP.
+
+Valfria bibliotek kan användas.

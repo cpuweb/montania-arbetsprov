@@ -1,0 +1,5 @@
+Huvudobject: id, lagersaldo, artiklar_enhet,  bild-har underobject,artiklar_benamning, artiklar_variant,artiklar_variant2,  artikelgrupper_id, sokindex_sokord-array, artikelkategorier_id, lev_artikelkod-tom, momssats, flagga_lagerfor, vikt, flagga_varianter_finns, artikelflaggor-tom, flagga_fraktfri-alla false, flagga_komponenter- allafalse, url, extra-tom array, pris, rabatt-alla tomma, valutor_id, bilder-tom array
+
+bild underobject: title, alt, url, width, height, orginal-har underobject, sources
+
+bild->orginal: title, alt, url, width, height, sources-array

@@ -45,19 +45,63 @@ function getProductsByCategory() {
 
 }
 
-function getNrOfProducts() {
 
-	$products = getAllProducts(); 
+function showAllProducts() {
+
+echo '<section id="allProducts">
+  <table id="productsTable" class="table table-striped table-bordered" style="width:100%">
+    <thead>
+        <tr>
+            <th>Produkt</th>
+            <th>Pris</th>
+            <th>I Lager</th>
+        </tr>
+    </thead>
+      <tbody>';
+      	
+$products = getAllProducts(); 
+usort($products, "cmp");
+
+
+foreach ($products as $key => $value) {
+
+	$nrOfProducts = count($value);
+
+
+ 	for($i = 0; $i <= $nrOfProducts; $i++) {
 	
-	foreach ($products as $product) {
+	if($value[$i]["artiklar_benamning"]) {
+   
+		echo '<tr>';
+		echo '<td>' . $value[$i]["artiklar_benamning"] . '</td>';
+		echo '<td>' .  $value[$i]["pris"] .  ' ' . $value[$i]["valutor_id"] . '</td>'; 
+		if($value[$i]["flagga_lagerfor"] == true){
+			echo '<td>Ja</td>';
+		}else {
+			echo '<td>Nej</td>';
+		}
+		echo '</tr>';
+		}
+		else{
 
-		$nrOfProducts = count($product);
-
+			$nrOfProducts--;
+		}
+		
 	}
-
-	return $nrOfProducts;
+	
 }
-
+echo '
+  </tbody>
+    <tfoot>
+        <tr>
+            <th>Produkt</th>
+            <th>Pris</th>
+            <th>I Lager</th>
+        </tr>
+    </tfoot>
+  </table>
+  </section>';
+}
 
 	
  ?>

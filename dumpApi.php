@@ -5,7 +5,7 @@ require 'functions.php';
 $result = getAllProducts();
 
 
-$apiresponse = var_dump(json_decode($result, false)); 
+$apiresponse = var_dump($result); 
 
 //echo $apiresponse;
 

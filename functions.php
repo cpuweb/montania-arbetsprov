@@ -7,11 +7,19 @@
 
 	$result = file_get_contents($apiURL,0,null,null);
 
-	$result = json_decode($result, FALSE); 
+	$result = json_decode($result, TRUE); 
+
+	
 
 	return $result;
 
  }
+
+ function cmp($a, $b) {
+    return strcmp($a->artiklar_benamning, $b->artiklar_benamning);
+}
+
+
 
 function getAllCategories() {
 

@@ -13,24 +13,35 @@ require 'functions.php';
 <?php 
 
 $products = getAllProducts(); 
+usort($products, "cmp");
 
-foreach ($products as $product) {
 
-	$nrOfProducts = count($product);
+foreach ($products as $key => $value) {
+//$nrOfProducts = count($key);
+	$nrOfProducts = count($value);
+
 
  	for($i = 0; $i <= $nrOfProducts; $i++) {
 	
-		echo 'Produktnamn: ' .  $product[$i]->artiklar_benamning . '&nbsp;';
-		echo 'Pris: ' .  $product[$i]->pris .  '&nbsp;' . $product[$i]->valutor_id . '&nbsp;'; 
-		if($product[$i]->flagga_lagerfor == true){
+	if($value[$i]["artiklar_benamning"]) {
+    
+	
+		echo 'Produktnamn: ' .  $value[$i]["artiklar_benamning"] . '&nbsp;';
+		echo 'Pris: ' .  $value[$i]["pris"] .  '&nbsp;' . $value[$i]["valutor_id"] . '&nbsp;'; 
+		if($value[$i]["flagga_lagerfor"] == true){
 			echo 'Finns i lager';
 		}else {
 			echo 'Finns ej i Lager';
 		}
 		echo '<br />';
 		echo '<br />';
+		}
+		else{
 
+			$nrOfProducts--;
+		}
 	}
+	echo $nrOfProducts;
 }
 ?>
 

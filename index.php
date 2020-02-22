@@ -20,49 +20,77 @@ require 'functions.php';
  <title>Mina Produkter</title>
 </head>
 
-<body>
+<body class="bg-light">
+	<div id="page-wrap">
    <header>
   <!-- Fixed navbar -->
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="#">Mina Produkter</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand  mr-auto mr-lg-0" href="#">Mina Produkter</a>
+    <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
+    <div class="collapse navbar-collapse offcanvas-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <li class="nav-item">
+          <a class="nav-link" href="index.php?page=start">Startsida</a>
+        </li>
+          <li class="nav-item active">
+          <a class="nav-link" href="index.php?page=categories">Kategorier <span class="sr-only">(current)</span></a>
         </li>
       </ul>     
     </div>
   </nav>
-</header>
 
+
+</header>
+<?php if(isset($_GET['category']) || $_GET['page'] == "categories") { ?>
+<div class="nav-scroller bg-white shadow-sm">
+  <nav class="nav nav-underline">
+    <a class="nav-link" href="index.php?page=categories">Alla Produkter</a>
+    <a class="nav-link" href="index.php?category=SERVETT">Servett</a>
+    <a class="nav-link" href="index.php?category=LJUS">Ljus</a>
+    <a class="nav-link" href="index.php?category=LYKTOR">Lyktor</a>
+    <a class="nav-link" href="index.php?category=PORSLIN">Porslin</a>
+    <a class="nav-link" href="index.php?category=none">Ingen Kategori</a>
+  </nav>
+</div>
+<?php }?>
 <!-- Begin page content -->
 <main role="main" class="flex-shrink-0">
   <div class="container">
-  	<div id="tabs">
-  <ul>
-    <li><a href="#tabs-1">Alla produkter</a></li>
-    <li><a href="#tabs-2">Proin dolor</a></li>
-    <li><a href="#tabs-3">Aenean lacinia</a></li>
-  </ul>
-  <div id="tabs-1">
-    	
-    	<?php showAllProducts(); ?>
+  	<section id="main-content">
+		
+		<?php 
 
-  </div>
-  <div id="tabs-2">
-    <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
-  </div>
-  <div id="tabs-3">
-    <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
-    <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
-  </div>
-</div>
+		$category = $_GET['category'];
+
+		if(isset($category)) {
+
+    		showCategory($category);
+
+		}else if(isset($_GET['page'])){
+
+			if($_GET['page'] == "start"){
+				echo '<h1>Mina Produkter</h1>';
+				echo '<p>Hej och välkommen till min lilla produktlista. Kolla gärna runt och se om du hittar något.</p>';
+
+			}else{
+
+				showAllProducts();
+
+			}
+
+		}
+		else{
+
+			showAllProducts();
+		}
+
+		 ?>
+  	
   
-  </section>
-  </div>
+  
+
 </main>
 
 <footer class="footer mt-auto py-3">
@@ -98,13 +126,8 @@ require 'functions.php';
 			 });
 
       	</script>
-      	<script>
-  $( function() {
-    $( "#tabs" ).tabs();
-  } );
-  </script>
 
-
+</div>
 </body>
 </html>
 

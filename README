@@ -1,29 +1,14 @@
-# README #
+# Montania Arbetsprov #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+Arbetsprov till tjänsten som webbutvecklare på montania
 
-### What is this repository for? ###
+## Kort sammanfattning ##
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+*Produkter presenterade i en tabell.
+*Huvudsakligt språk: PHP utan framework
+*Använda bibliotek: DataTables, Jquery och Bootstrap 4
 
-### How do I get set up? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+### Kontakt ###
 
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+* Christoffer Puschke christoffer.puschke@gmail.com
